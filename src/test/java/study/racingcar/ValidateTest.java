@@ -12,13 +12,12 @@ class ValidateTest {
     @DisplayName("자동차이름을 입력받아 parsing 한뒤 String 배열에 담는다.")
     void inputParseTest() {
         // given
-        String input = "pobi,crong,honux";
+        String input = "pobi";
 
         // when
-        final String[] split = Validate.InputValidate(input);
+        final String invalidString = Validate.nameValidate(input);
         // then
-        assertThat(split).hasSize(3);
-        assertThat(split[0]).isEqualTo("pobi");
+        assertThat(invalidString).hasSize(4);
     }
 
     @Test
@@ -27,7 +26,7 @@ class ValidateTest {
         // given
         String input = "pobi,crong,123456";
         // when & then
-        assertThatThrownBy(() -> Validate.InputValidate(input))
+        assertThatThrownBy(() -> Validate.nameValidate(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("자동차의 이름은 5글자가 넘을 수 없습니다.");
     }
