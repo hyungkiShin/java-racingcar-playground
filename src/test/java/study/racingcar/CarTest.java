@@ -12,7 +12,7 @@ class CarTest {
         Car car = new Car("pobi");
 
         // when
-        car.move(4);
+        car.move(() -> true);
         // then
         assertThat(car.getPosition()).isEqualTo(1);
     }
@@ -22,7 +22,7 @@ class CarTest {
         // given
         Car car = new Car("pobi");
         // when
-        car.move(3);
+        car.move(() -> false);
         // then
         assertThat(car.getPosition()).isZero();
     }

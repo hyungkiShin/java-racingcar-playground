@@ -1,7 +1,6 @@
 package study.racingcar;
 
 public class Car {
-    private static final int FORWARD_NUMBER = 4;
 
     private final String name;
     private int position = 0;
@@ -10,8 +9,8 @@ public class Car {
         this.name = nameValidate(name);
     }
 
-    public void move(int randomNumber) {
-        if(randomNumber >= FORWARD_NUMBER) {
+    public void move(MoveStrategy moveStrategy) {
+        if (moveStrategy.isMove()) {
             this.position += 1;
         }
     }

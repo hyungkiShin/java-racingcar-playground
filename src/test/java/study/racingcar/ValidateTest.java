@@ -13,7 +13,6 @@ class ValidateTest {
     void inputParseTest() {
         // given
         String input = "pobi";
-
         // when
         final String invalidString = Validate.nameValidate(input);
         // then
