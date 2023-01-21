@@ -4,21 +4,21 @@ import java.util.Objects;
 
 public class Position {
 
-    private int position;
+    private int locate;
 
     public Position() {
-        this.position = 0;
+        this.locate = 0;
     }
 
-    public Position(int position) {
-        if (position < 0) {
+    public Position(int locate) {
+        if (locate < 0) {
             throw new IllegalArgumentException();
         }
-        this.position = position;
+        this.locate = locate;
     }
 
-    public int getPosition() {
-        return this.position;
+    public int getLocate() {
+        return this.locate;
     }
 
     @Override
@@ -26,15 +26,23 @@ public class Position {
         if (this == o) return true;
         if (!(o instanceof Position)) return false;
         final Position position1 = (Position) o;
-        return getPosition() == position1.getPosition();
+        return getLocate() == position1.getLocate();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getPosition());
+        return Objects.hash(getLocate());
     }
 
     public void move() {
-        this.position += 1;
+        this.locate += 1;
+    }
+
+    public boolean isSame(Position maxPosition) {
+        return this.locate == maxPosition.getLocate();
+    }
+
+    public boolean lessThan(final Position maxPosition) {
+        return this.locate < maxPosition.locate;
     }
 }
