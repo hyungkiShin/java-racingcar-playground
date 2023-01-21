@@ -1,7 +1,6 @@
 package study.racingcar.domain;
 
 import org.junit.jupiter.api.Test;
-import study.racingcar.domain.Car;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,7 +13,7 @@ class CarTest {
         // when
         car.move(() -> true);
         // then
-        assertThat(car.getPosition()).isEqualTo(1);
+        assertThat(car.getPosition().getLocate()).isEqualTo(1);
     }
 
     @Test
@@ -24,7 +23,7 @@ class CarTest {
         // when
         car.move(() -> false);
         // then
-        assertThat(car.getPosition()).isZero();
+        assertThat(car.getPosition().getLocate()).isZero();
     }
 
 }
