@@ -1,8 +1,8 @@
-package study.racingcar;
+package study.racingcar.domain;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import study.racingcar.Name;
+import study.racingcar.domain.Name;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
