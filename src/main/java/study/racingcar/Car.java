@@ -2,29 +2,21 @@ package study.racingcar;
 
 public class Car {
 
-    private final String name;
-    private int position = 0;
+    private Name name;
+    private Position position;
 
     public Car(final String name) {
-        this.name = nameValidate(name);
+        this.name = new Name(name);
+        this.position = new Position(0);
     }
 
     public void move(MoveStrategy moveStrategy) {
         if (moveStrategy.isMove()) {
-            this.position += 1;
+            this.position.move();
         }
     }
 
     public int getPosition() {
-        return this.position;
-    }
-
-    private String nameValidate(String input) {
-
-        if (input.length() > 5) {
-            throw new IllegalArgumentException("자동차의 이름은 5글자가 넘을 수 없습니다.");
-        }
-
-        return input;
+        return this.position.getPosition();
     }
 }
