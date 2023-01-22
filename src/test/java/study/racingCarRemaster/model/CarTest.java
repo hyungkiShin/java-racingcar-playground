@@ -9,7 +9,7 @@ class CarTest {
     @Test
     void 자동차_이동_테스트() {
         // given
-        Car car = new Car("자동차 이름", 0);
+        Car car = new Car("자동차이름", 0);
         // when
         car.move(() -> true);
         // then
@@ -19,7 +19,7 @@ class CarTest {
     @Test
     void 자동차_정지_테스트() {
         // given
-        Car car = new Car("자동차 이름", 0);
+        Car car = new Car("자동차이름", 0);
         // when
         car.move(() -> false);
         // then

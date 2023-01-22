@@ -3,10 +3,14 @@ package study.racingCarRemaster.model;
 import java.util.Objects;
 
 public class Location {
-    private int location;
+    private int location = 0;
 
     public Location(final int location) {
         this.location = location;
+    }
+
+    public int getLocation() {
+        return location;
     }
 
     @Override
@@ -20,5 +24,9 @@ public class Location {
     @Override
     public int hashCode() {
         return Objects.hash(location);
+    }
+
+    public void move() {
+        this.location += 1;
     }
 }
