@@ -14,7 +14,9 @@ public class Car {
         return location;
     }
 
-    public void move() {
-        this.location += 1;
+    public void move(final MoveStrategy moveStrategy) {
+        if (moveStrategy.isMove()) {
+            this.location += 1;
+        }
     }
 }

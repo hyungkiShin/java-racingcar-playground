@@ -48,5 +48,5 @@ pobi, honux가 최종 우승했습니다.
 ### Car todo list
 - [x] 자동차 객체 는 이름과 위치를 가진다.
   - [x] 자동차 객체는 move 라는 행위를 인지하면 출발 해야한다.
-  - [ ] 이때, 자동차가 이동 할 수 있는 조건은 random number 를 생성할때 4 이상이여야 이동 할 수 있다.
+  - [x] 이때, 자동차가 이동 할 수 있는 조건은 random number 를 생성할때 4 이상이여야 이동 할 수 있다.
   - [ ] 자동차 객체는 name 과 location 들의 원시값을 wrapping 한 class 변수를 가진다.

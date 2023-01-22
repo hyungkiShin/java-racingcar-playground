@@ -11,8 +11,18 @@ class CarTest {
         // given
         Car car = new Car("자동차 이름", 0);
         // when
-        car.move();
+        car.move(() -> true);
         // then
         assertThat(car.getLocation()).isEqualTo(1);
+    }
+
+    @Test
+    void 자동차_정지_테스트() {
+        // given
+        Car car = new Car("자동차 이름", 0);
+        // when
+        car.move(() -> false);
+        // then
+        assertThat(car.getLocation()).isZero();
     }
 }
