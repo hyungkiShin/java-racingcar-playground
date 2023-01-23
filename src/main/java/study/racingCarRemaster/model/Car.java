@@ -1,5 +1,7 @@
 package study.racingCarRemaster.model;
 
+import java.util.Objects;
+
 public class Car {
 
     private CarName name;
@@ -18,5 +20,18 @@ public class Car {
         if (moveStrategy.isMove()) {
             this.location.move();
         }
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Car)) return false;
+        final Car car = (Car) o;
+        return Objects.equals(name, car.name) && Objects.equals(getLocation(), car.getLocation());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, getLocation());
     }
 }
